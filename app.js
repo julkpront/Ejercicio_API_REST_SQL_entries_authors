@@ -16,6 +16,7 @@ const limiter = rateLimit({
   message: { message: 'Demasiadas peticiones, inténtalo de nuevo en un minuto' }
 });
 
+app.set('trust proxy', 1);
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(limiter);
